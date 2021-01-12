@@ -24,7 +24,7 @@ function forEach(array, cb) {
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
 
   function  arrayimprimir(elemento,indice){
-    return elemento;
+    return cb(elemento);
   }
 
 array.forEach(arrayimprimir);
@@ -36,18 +36,11 @@ function map(array, cb) {
   // Crea un nuevo array
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
-  // var array = [1,2,3,4,5]
-  // function cb (e) {console.log(e)}
-  // nuevoarray = []
-  // var nuevoArray = [];
-  // for(var i = 0; i < array.length; i++) {
-  //   nuevoArray.push(cb(array[i]));
-  //   nuevoArray[i] = cb(array[i]);
-  // }
-  var nuevoArray = array.map(function(el) {
-    return cb(el);
+  
+  let nuevoArray = array.map(function(elemento  ) {
+    return cb(elemento);
   });
-  return nuevoArray;
+  return nuevoArray ;
 }
 
 // No modificar nada debajo de esta línea
